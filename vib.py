@@ -17,7 +17,7 @@ device1.startLoopRead()
 #MQTT Hostname
 hostname = "test.mosquitto.org"
 #MQTT Topic
-topic="test/topic"
+topic="my/topic/here/4711"
 
 time.sleep(1)
 
