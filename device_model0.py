@@ -8,7 +8,7 @@ from serial import SerialException
 # 串口配置
 class SerialConfig:
     # 串口号
-    portName = ''
+    portName = '/dev/ttyUSB0'
 
     # 波特率
     baud = 9600
