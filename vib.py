@@ -24,12 +24,12 @@ while True:
 #    time.sleep(1)
     ts = str(int(time.time()))
     dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
-    os.system('clear')
+#    os.system('clear')
 #    var1 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device.get("58"),device.get("59"),device.get("60"),device.get("61"),device.get("62"),device.get("63"),device.get("64"),device.get("65"),device.get("66"),device.get("67"),device.get("68"),device.get("69"),device.get("70")))
     var0 = ("{},{},{}".format(device0.get("58"),device0.get("59"),device0.get("60")))
     var1 = ("{},{},{}".format(device1.get("58"),device1.get("59"),device1.get("60")))
     varx = dt + "," + var0 + "," + var1 + "," + ts
-    print(varx)
+#    print(varx)
 
     response = os.system("ping -c 1 " + "google.com")
     if response == 0:
