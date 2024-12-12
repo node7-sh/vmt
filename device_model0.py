@@ -5,49 +5,49 @@ import serial
 from serial import SerialException
 
 
-# 串口配置
+# Serial port configuration
 class SerialConfig:
-    # 串口号
+    # serial port
     portName = '/dev/ttyUSB0'
 
-    # 波特率
+    # baud rate
     baud = 9600
 
 
-# 设备实例
+# device instance
 class DeviceModel:
-    # region 属性
+    # region property
 
-    # 设备名称
-    deviceName = "我的设备"
+    # Device name
+    deviceName = "my device"
 
-    # 设备modbus ID
+    # equipment modbus ID
     ADDR = 0x50
 
-    # 设备数据字典
+    # Device data dictionary
     deviceData = {}
 
-    # 设备是否开启
+    # Is the device turned on?
     isOpen = False
 
-    # 是否循环读取
+    # Whether to read in a loop
     loop = False
 
-    # 串口
+    # serial port
     serialPort = None
 
-    # 串口配置
+    # Serial port configuration
     serialConfig = SerialConfig()
 
-    # 临时数组
+    # temporary array
     TempBytes = []
 
-    # 起始寄存器
+    # start register
     statReg = None
 
     # endregion
 
-    # region   计算CRC
+    # region   calculateCRC
     auchCRCHi = [
         0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0, 0x80, 0x41, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81,
         0x40, 0x01, 0xC0, 0x80, 0x41, 0x00, 0xC1, 0x81, 0x40, 0x00, 0xC1, 0x81, 0x40, 0x01, 0xC0,
@@ -88,10 +88,10 @@ class DeviceModel:
         0x44, 0x84, 0x85, 0x45, 0x87, 0x47, 0x46, 0x86, 0x82, 0x42, 0x43, 0x83, 0x41, 0x81, 0x80,
         0x40]
 
-    # endregion  计算CRC
+    # endregion  calculateCRC
 
     def __init__(self, deviceName, portName, baud, ADDR):
-        print("初始化设备模型")
+        print("Initialize device model")
         # 设备名称（自定义）
         self.deviceName = deviceName
         # 串口号
