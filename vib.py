@@ -35,7 +35,7 @@ while True:
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         client.connect(hostname,1883,60)
-        client.publish(topic, varx)
+        client.publish(topic,varx)
         client.disconnect()
 #    else:
 #        time.sleep(0.1)
