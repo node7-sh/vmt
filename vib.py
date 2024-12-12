@@ -13,7 +13,10 @@ device1 = device_model1.DeviceModel("WTVB02", "/dev/ttyUSB1", 9600, 0x51)
 device1.openDevice()
 device1.startLoopRead()
 
-hostname = "xxx.xxx.xxx"
+#MQTT Hostname
+hostname = "test.mosquitto.org"
+#MQTT Topic
+topic="test/topic"
 
 time.sleep(1)
 
@@ -32,7 +35,7 @@ while True:
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         client.connect(hostname,1883,60)
-        client.publish("topic/test", varx)
+        client.publish(topic, varx)
         client.disconnect()
 #    else:
 #        time.sleep(0.1)
