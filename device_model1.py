@@ -8,7 +8,7 @@ from serial import SerialException
 # 串口配置
 class SerialConfig:
     # 串口号
-    portName = ''
+    portName = '/dev/ttyUSB1'
 
     # 波特率
     baud = 9600
@@ -22,7 +22,7 @@ class DeviceModel:
     deviceName = "我的设备"
 
     # 设备modbus ID
-    ADDR = 0x50
+    ADDR = 0x51
 
     # 设备数据字典
     deviceData = {}
