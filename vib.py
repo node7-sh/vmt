@@ -26,8 +26,8 @@ while True:
     ts = str(int(time.time()))
     dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
 #    os.system('clear')
-    var0 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device.get("58"),device.get("59"),device.get("60"),device.get("61"),device.get("62"),device.get("63"),device.get("64"),device.get("65"),device.get("66"),device.get("67"),device.get("68"),device.get("69"),device.get("70")))
-    var1 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device.get("58"),device.get("59"),device.get("60"),device.get("61"),device.get("62"),device.get("63"),device.get("64"),device.get("65"),device.get("66"),device.get("67"),device.get("68"),device.get("69"),device.get("70")))
+    var0 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device0.get("58"),device0.get("59"),device0.get("60"),device0.get("61"),device0.get("62"),device0.get("63"),device0.get("64"),device0.get("65"),device0.get("66"),device0.get("67"),device0.get("68"),device0.get("69"),device0.get("70")))
+    var1 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device1.get("58"),device1.get("59"),device1.get("60"),device1.get("61"),device1.get("62"),device1.get("63"),device1.get("64"),device1.get("65"),device1.get("66"),device1.get("67"),device1.get("68"),device1.get("69"),device1.get("70")))
 #    var0 = ("{},{},{}".format(device0.get("58"),device0.get("59"),device0.get("60")))
 #    var1 = ("{},{},{}".format(device1.get("58"),device1.get("59"),device1.get("60")))
     varx = dt + "," + var0 + "," + var1 + "," + ts
