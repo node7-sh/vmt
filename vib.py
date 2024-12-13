@@ -7,19 +7,12 @@ import subprocess
 import datetime
 import csv
 
-device0 = device_model0.DeviceModel("WTVB02", "/dev/ttyUSB0", 9600, 0x50)
-device0.openDevice()
-device0.startLoopRead()
-device1 = device_model1.DeviceModel("WTVB02", "/dev/ttyUSB1", 9600, 0x51)
-device1.openDevice()
-device1.startLoopRead()
+device0 = device_model0.DeviceModel("WTVB02", "/dev/ttyUSB0", 9600, 0x50); device0.openDevice(); device0.startLoopRead()
+device1 = device_model1.DeviceModel("WTVB02", "/dev/ttyUSB1", 9600, 0x51); device1.openDevice(); device1.startLoopRead()
 
-#MQTT Hostname
-hostname = "test.mosquitto.org"
-#MQTT Topic
-topic="my/topic/here/4711"
-#Intervall
-intervall = 1.0
+hostname = "test.mosquitto.org"     # MQTT Hostname
+topic="my/topic/here/4711"          # MQTT Topic
+intervall = 1.0                     # Intervall
 next_start = time.time()
 
 time.sleep(1)
