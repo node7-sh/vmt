@@ -22,7 +22,7 @@ topic="my/topic/here/4711"
 time.sleep(1)
 
 while True:
-    subprocess.run(["python", time.sleep(1)])
+    p1 = subprocess.run(["python", time.sleep(1)])
 #    time.sleep(1)
     ts = str(int(time.time()))
     dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
@@ -42,5 +42,5 @@ while True:
         client.disconnect()
 #    else:
 #        time.sleep(0.1)
-    subprocess.call()
+    p1.wait()
 #    time.sleep(0.8)
