@@ -18,11 +18,15 @@ device1.startLoopRead()
 hostname = "test.mosquitto.org"
 #MQTT Topic
 topic="my/topic/here/4711"
+#Intervall
+intervall = 1.0
+next_start = time.time()
 
 time.sleep(1)
 
 while True:
-    p1 = subprocess.run(time.sleep(1))
+    start = time.time()
+#    p1 = subprocess.run(time.sleep(1))
 #    time.sleep(1)
     ts = str(int(time.time()))
     dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
@@ -33,14 +37,25 @@ while True:
 #    var1 = ("{},{},{}".format(device1.get("58"),device1.get("59"),device1.get("60")))
     varx = dt + "," + var0 + "," + var1 + "," + ts
 #    print(varx)
+    print(time.time()-next_start)
+    next_start += intervall
+    rest_zeit = next_start - time.time()
 
-    response = os.system("ping -c 1 " + "google.com")
-    if response == 0:
-        client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
-        client.connect(hostname,1883,60)
-        client.publish(topic,varx)
-        client.disconnect()
+    if verbleibende_zeit > 0:
+        time.sleep(rest_zeit)
+    else:
+        # Falls die Messung länger als geplant gedauert hat, wird ohne Pause weitergemacht
+        # oder ggf. Fehlerbehandlung oder Logging hier einfügen.
+        pass
+    
+#    response = os.system("ping -c 1 " + "google.com")
+#    if response == 0:
+#        client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+#        client.connect(hostname,1883,60)
+#        client.publish(topic,varx)
+#        client.disconnect()
 #    else:
+#        pass
 #        time.sleep(0.1)
-    p1.wait()
+#    p1.wait()
 #    time.sleep(0.8)
