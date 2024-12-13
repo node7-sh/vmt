@@ -41,7 +41,7 @@ while True:
     next_start += intervall
     rest_zeit = next_start - time.time()
 
-    if verbleibende_zeit > 0:
+    if rest_zeit > 0:
         time.sleep(rest_zeit)
     else:
         # Falls die Messung länger als geplant gedauert hat, wird ohne Pause weitergemacht
