@@ -24,7 +24,7 @@ while True:
 #    print(time.time()-next_start)
     next_start += intervall; rest_zeit = next_start - time.time()
     varx = dt + "," + var0 + "," + var1 + "," + ts + "," + str(intervall) + "," + str(rest_zeit)
-    
+
     response = subprocess.run(["ping", "-c1", "google.com"], capture_output=True, text=True)
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
