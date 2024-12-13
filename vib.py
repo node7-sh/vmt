@@ -25,7 +25,7 @@ while True:
     next_start += interval; rest_zeit = next_start - time.time()
     varx = dt + "," + var0 + "," + var1 + "," + ts + "," + str(interval) + "," + str(rest_zeit)
 
-    response = response = os.system("ping -c 1 " + "google.com")
+    response = response = os.system("ping -c 1 " + "google.com  > /dev/null 2>&1")
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         client.connect(hostname,1883,60)
