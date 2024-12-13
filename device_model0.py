@@ -92,19 +92,19 @@ class DeviceModel:
 
     def __init__(self, deviceName, portName, baud, ADDR):
         print("Initialize device model")
-        # 设备名称（自定义）
+        # Device name (custom)
         self.deviceName = deviceName
-        # 串口号
+        # serial number
         self.serialConfig.portName = portName
-        # 串口波特率
+        # Serial baud rate
         self.serialConfig.baud = baud
-        # modbus 设备地址
+        # modbus Device address
         self.ADDR = ADDR
 
-    # 获得CRC校验
+    # getCRCcheck
     def get_crc(self, datas, dlen):
-        tempH = 0xff  # 高 CRC 字节初始化 High CRC byte initialization
-        tempL = 0xff  # 低 CRC 字节初始化 Low CRC byte initialization
+        tempH = 0xff  # high CRC Byte initialization High CRC byte initialization
+        tempL = 0xff  # Low CRC Byte initialization Low CRC byte initialization
         for i in range(0, dlen):
             tempIndex = (tempH ^ datas[i]) & 0xff
             tempH = (tempL ^ self.auchCRCHi[tempIndex]) & 0xff
@@ -112,24 +112,24 @@ class DeviceModel:
         return (tempH << 8) | tempL
         pass
 
-    # region 获取设备数据
+    # region Get device data
 
-    # 设置设备数据
+    # Set device data
     def set(self, key, value):
-        # 将设备数据存到键值
+        # Save device data to key
         self.deviceData[key] = value
 
-    # 获得设备数据
+    # Get device data
     def get(self, key):
-        # 从键值中获取数据，没有则返回None
+        # Get data from key value, return if none None
         if key in self.deviceData:
             return self.deviceData[key]
         else:
             return None
 
-    # 删除设备数据
+    # Delete device data
     def remove(self, key):
-        # 删除设备键值
+        # Delete device key
         del self.deviceData[key]
 
     # endregion
