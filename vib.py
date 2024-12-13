@@ -30,7 +30,7 @@ while True:
     next_start += intervall
     rest_zeit = next_start - time.time()
 
-    response = subprocess.run(["ping", "-c1", „google.com“], capture_output=True, text=True)
+    response = subprocess.run(["ping", "-c1", "google.com"], capture_output=True, text=True)
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
         client.connect(hostname,1883,60)
