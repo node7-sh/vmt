@@ -22,7 +22,7 @@ topic="my/topic/here/4711"
 time.sleep(1)
 
 while True:
-    p1 = subprocess.run(["python", time.sleep(1)])
+    p1 = subprocess.run(time.sleep(1))
 #    time.sleep(1)
     ts = str(int(time.time()))
     dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
