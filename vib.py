@@ -21,9 +21,12 @@ while True:
     start = time.time(); ts = str(int(time.time())); dt = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"); os.system('clear')
     var0 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device0.get("58"),device0.get("59"),device0.get("60"),device0.get("61"),device0.get("62"),device0.get("63"),device0.get("64"),device0.get("65"),device0.get("66"),device0.get("67"),device0.get("68"),device0.get("69"),device0.get("70")))
     var1 = ("vx:{} vy:{} vz:{} ax:{} ay:{} az:{} t:{} sx:{} sy:{} sz:{} fx:{} fy:{} fz:{}".format(device1.get("58"),device1.get("59"),device1.get("60"),device1.get("61"),device1.get("62"),device1.get("63"),device1.get("64"),device1.get("65"),device1.get("66"),device1.get("67"),device1.get("68"),device1.get("69"),device1.get("70")))
-    varx = dt + "," + var0 + "," + var1 + "," + ts
+    
 #    print(time.time()-next_start)
     next_start += intervall; rest_zeit = next_start - time.time()
+
+    varx = dt + "," + var0 + "," + var1 + "," + ts + "," + (time.time()-next_start) + "," + rest_zeit
+    
     response = subprocess.run(["ping", "-c1", "google.com"], capture_output=True, text=True)
     if response == 0:
         client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
@@ -32,7 +35,7 @@ while True:
         client.disconnect()
     else:
         pass
-    
+#    print(rest_zeit)
     if rest_zeit > 0:
         time.sleep(rest_zeit)
     else:
