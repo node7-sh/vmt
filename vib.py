@@ -11,9 +11,9 @@ import csv
 device0 = device_model0.DeviceModel("WTVB02", "/dev/ttyUSB0", 9600, 0x50); device0.openDevice(); device0.startLoopRead()
 device1 = device_model1.DeviceModel("WTVB02", "/dev/ttyUSB1", 9600, 0x51); device1.openDevice(); device1.startLoopRead()
 
-hostname = varvib.mqtt_host #"test.mosquitto.org"     # MQTT Hostname
-topic = varvib.mqtt_topic #"my/topic/here/4711"          # MQTT Topic
-interval = 1.0                     # Interval
+hostname = varvib.mqtt_host
+topic = varvib.mqtt_topic
+interval = varvib.interval
 next_start = time.time()
 
 time.sleep(1)
