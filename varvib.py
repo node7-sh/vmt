@@ -2,4 +2,4 @@
 mqtt_host = "test.mosquitto.org"
 mqtt_topic = "my/topic/here/4711"
 interval = 1.0
-exp_path = "~/vib/"
+exp_path = "/home/pi/vib/"
